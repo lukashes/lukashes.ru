@@ -1,1 +1,1 @@
-<?php echo 'Hello World!'; ?>
+<?php mysql_connect('localhost', 'root', ''); ?>
