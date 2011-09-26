@@ -1,0 +1,14 @@
+.admin-menu-service {
+  background: #faf8f0;
+}
+
+.admin-menu .current {
+  color: #aaa8a0;
+}
+
+.admin-links a { color: #206040 }
+.admin-links a.dashed  { border-color: #206040 }
+
+.e2-flying-frame {
+  border-color: #206040;
+}
