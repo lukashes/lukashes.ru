@@ -1,0 +1,12 @@
+<div class="copyrights icons">
+&copy;&nbsp;<?= @$content['blog']['live-author'] ?>, <?=$content['blog']['years-range']?> 
+<?
+  if (
+    array_key_exists ('admin-hrefs', $content)
+    and array_key_exists ('name-and-author', $content['admin-hrefs'])
+    and !_AT ($content['admin-hrefs']['name-and-author'] )
+  ) { 
+?>
+  <a href="<?= $content['admin-hrefs']['name-and-author'] ?>"><img src="<?= _IMGSRC ('edit-small.png') ?>" alt="Править" title="Править" /></a>
+<? } ?>
+</div>

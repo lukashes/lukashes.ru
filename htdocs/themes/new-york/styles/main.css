@@ -1,0 +1,85 @@
+body {
+  font-family: "Georgia";
+}
+
+a { color: #004276; }
+a:visited { color: #420076; }
+
+h1, h2, h3 { 
+  font-family: "Georgia";
+}
+
+.blog-title-and-description {
+  margin: 0 25%;
+  text-align: center;
+  width: 50%;
+}
+
+.user-picture {
+  float: none;
+  margin-bottom: 1.4em;
+}
+
+.form-search {
+  float: none;
+  width: 100%;
+  padding-right: 1em;
+  margin: 0;
+}
+
+.form-search img {
+  display: none;
+}
+
+.blog-title-and-description h1 {
+  font-size: 300%;
+}
+
+.note h1 {
+  font-size: 200%;
+  font-style: italic;
+}
+
+.main-content h3,
+.note h2 {
+  font-size: 130%;
+}
+
+.note .comments-link {
+  margin: 0 0 0 2.5em;
+}
+
+.note .comments-link img {
+  display: none;
+}
+
+.super-h, .rss-link {
+  text-transform: uppercase;
+  letter-spacing: .17em;
+  font-family: "Arial";
+  color: #a81817;
+}
+
+.super-h {
+  font-size: 55%;
+}
+
+.blog-title-and-description h1 .rss-link {
+  color: #a81817;
+  top: -1.75em;
+}
+
+.top-line, .bottom-line {
+  border-top: 1px #b0b0b0 solid;
+  height: 4px;
+  border-bottom: 2px #000 solid;
+}
+
+.sidebar {
+  border-right: 1px #b0b0b0 solid;
+  padding-right: .33em;
+}
+
+.submit-box, .keyboard-shortcut {
+  background: #e8e4e0;
+}

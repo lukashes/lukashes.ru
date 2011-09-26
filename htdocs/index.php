@@ -1,1 +1,1 @@
-<?php mysql_connect('localhost', 'root', ''); ?>
+<? require 'system/core.php'; e2 (); ?>
