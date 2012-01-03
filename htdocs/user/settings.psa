@@ -1,0 +1,1 @@
+a:4:{s:10:"appearance";a:1:{s:14:"notes_per_page";i:10;}s:8:"comments";a:1:{s:2:"on";b:1;}s:2:"db";a:6:{s:6:"server";s:9:"localhost";s:9:"user_name";s:4:"root";s:5:"passw";s:4:"pass";s:4:"name";s:11:"lukashes_db";s:12:"table_prefix";s:2:"e2";s:6:"exists";b:1;}s:8:"timezone";a:2:{s:6:"offset";i:14400;s:6:"is_dst";b:0;}}
