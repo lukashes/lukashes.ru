@@ -24,31 +24,38 @@ if (isset($_POST['url_for_parse'])) {
 	//curl_setopt($rHandle, CURLOPT_POST, 1); // set POST method  
 	//curl_setopt($rHandle, CURLOPT_POSTFIELDS, "url=index%3Dbooks&field-keywords=PHP+MYSQL"); // add POST fields  
 	$sResult = curl_exec($rHandle); // run the whole process  
+	$aResult = curl_getinfo($rHandle);
+
 	curl_close($rHandle); 
-	
-	$sResult;
-	
-	$oDom = new DOMDocument();
-	
-	@$oDom->loadHTML($sResult);
-	
-	$oElement = $oDom->getElementById('get-sale-phones');
-	
-	$sRel = 'http://cars.auto.ru' . $oElement->getAttribute('rel');
-	
-	$rHandle = curl_init();
-	
-	curl_setopt($rHandle, CURLOPT_FAILONERROR, 1);  
-	curl_setopt($rHandle, CURLOPT_FOLLOWLOCATION, 1);// allow redirects  
-	curl_setopt($rHandle, CURLOPT_RETURNTRANSFER,1); // return into a variable  
-	curl_setopt($rHandle, CURLOPT_TIMEOUT, 3); // times out after 4s  
-	
-	// Cookies
-	curl_setopt($rHandle, CURLOPT_COOKIEJAR, '/tmp/parser.jar');
-	curl_setopt($rHandle, CURLOPT_COOKIEFILE, '/tmp/parcer.txt');
-	
-	curl_setopt($rHandle, CURLOPT_URL, $sRel);
-	
-	echo $sResult = curl_exec($rHandle); // run the whole process  
-	curl_close($rHandle);
+	if ($aResult['http_code'] == 200) {
+		$oDom = new DOMDocument();
+		
+		@$oDom->loadHTML($sResult);
+		
+		$oElement = $oDom->getElementById('get-sale-phones');
+		
+		if ($oElement) {
+			$sRel = 'http://cars.auto.ru' . $oElement->getAttribute('rel');
+			
+			$rHandle = curl_init();
+			
+			curl_setopt($rHandle, CURLOPT_FAILONERROR, 1);  
+			curl_setopt($rHandle, CURLOPT_FOLLOWLOCATION, 1);// allow redirects  
+			curl_setopt($rHandle, CURLOPT_RETURNTRANSFER,1); // return into a variable  
+			curl_setopt($rHandle, CURLOPT_TIMEOUT, 3); // times out after 4s  
+			
+			// Cookies
+			curl_setopt($rHandle, CURLOPT_COOKIEJAR, '/tmp/parser.jar');
+			curl_setopt($rHandle, CURLOPT_COOKIEFILE, '/tmp/parcer.txt');
+			
+			curl_setopt($rHandle, CURLOPT_URL, $sRel);
+			
+			echo $sResult = curl_exec($rHandle); // run the whole process  
+			curl_close($rHandle);
+		} else {
+			echo '<p>Tag with Phone didnt found</p>';
+		}
+	} else {
+		echo '<p>Page dont exist</p>';
+	}
 }
